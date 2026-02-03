@@ -1,0 +1,87 @@
+---
+import Logo from "../images/logo.svg";
+import Burger from "../images/burger.svg";
+---
+
+<header class="sticky top-0 bg-white">
+    <div class="w-full border-b border-solid border-neutral-300">
+        <div class="container mx-auto px-8">
+            <nav id="mainnav" class="group flex items-center min-h-16">
+                <div class="mr-auto">
+                    <a class="cursor-pointer" href="/">
+                        <Logo />
+                    </a>
+                </div>
+
+                <ul
+                    class="flex flex-wrap flex-col md:flex-row md:items-center gap-4 bg-white shadow-xl md:shadow-none h-svh md:h-auto p-8 md:p-0 fixed md:static top-0 right-0 w-[min(22rem,100vw)] md:w-full md:justify-end group-has-[[aria-expanded=false]]:max-md:invisible"
+                >
+                    <li>
+                        <div class="flex px-4">
+                            <a
+                                class="border-b-2 solid border-transparent hover:border-neutral-900 text-base/8 cursor-pointer"
+                                href="/works">Works</a
+                            >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex px-4">
+                            <a
+                                class="border-b-2 solid border-transparent hover:border-neutral-900 text-base/8 cursor-pointer"
+                                href="/texts">Texts</a
+                            >
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex px-4">
+                            <a
+                                class="border-b-2 solid border-transparent hover:border-neutral-900 text-base/8 cursor-pointer"
+                                href="/about">About</a
+                            >
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<template id="burger-template">
+    <button
+        class="relative z-10 flex md:hidden"
+        type="button"
+        aria-expanded="false"
+        aria-label="Menu"
+        aria-controls="mainnav"
+    >
+        <Burger />
+    </button>
+</template>
+
+<script>
+    function init() {
+        const nav = document.querySelector("#mainnav");
+        if (!nav) return;
+        const list = nav.querySelector("ul");
+        if (!list) return;
+        const burgerTemplate = document.querySelector("#burger-template");
+        if (!burgerTemplate || !(burgerTemplate instanceof HTMLTemplateElement))
+            return;
+        const burgerClone = burgerTemplate.content.cloneNode(true);
+        if (!(burgerClone instanceof DocumentFragment)) return;
+        const button = burgerClone.querySelector("button");
+        if (!button) return;
+        button.addEventListener("click", () => {
+            const isOpen = button.getAttribute("aria-expanded") === "true";
+            button.setAttribute("aria-expanded", String(!isOpen));
+        });
+        nav.addEventListener("keyup", (e) => {
+            if ((e as KeyboardEvent).code === "Escape") {
+                button.setAttribute("aria-expanded", String(false));
+            }
+        });
+        nav.insertBefore(burgerClone, list);
+    }
+
+    init();
+</script>

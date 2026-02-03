@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@font-face {
+    font-display: swap;
+    font-family: 'Spline Sans Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/SplineSansMono-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Spline Sans Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/SplineSansMono-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Spline Sans Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/SplineSansMono-600.woff2') format('woff2');
+}
+
+@theme {
+    --font-display: "Spline Sans Mono", monospace;
+}

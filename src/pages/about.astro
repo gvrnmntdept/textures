@@ -1,7 +1,51 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/BaseLayout.astro";
+import streetImg from "../images/street.webp";
 ---
 
 <Layout>
-    <div class="min-h-96">TODO: About</div>
+    <section class="container mx-auto px-8 pt-8 pb-16 text-pretty">
+        <div class="pb-8">
+            <Image src={streetImg} alt="Street" />
+        </div>
+        <h1 class="text-3xl font-medium tracking-tight mt-4 mb-6">About</h1>
+        <p>
+            Spectral Textures is maintained by a loose constellation of artists
+            working across Europe, connected less by geography than by shared
+            conditions. They move between studios, transit zones, archives, and
+            temporary workspaces, carrying microphones, code, and unfinished
+            ideas. Membership is unstable by design. Names circulate, disappear,
+            reappear under different frequencies.
+        </p>
+        <p class="mt-4">
+            The group’s practice unfolds somewhere between listening and
+            construction. Field recordings are treated as signals rather than
+            documents; synthesis is approached as a form of writing rather than
+            sound design. What matters is not origin but transformation—how
+            environments fracture when translated into spectra, how systems
+            leave audible traces even when no one is speaking.
+        </p>
+        <p class="mt-4">
+            Spectral Textures is not an institution, label, or collective in any
+            formal sense. It functions more like an interference pattern:
+            moments of alignment followed by dispersion. Projects emerge,
+            overlap briefly, then dissolve back into individual trajectories.
+            Authorship remains intentionally blurred. The work is shaped by
+            shared tools, shared references, and shared doubts.
+        </p>
+        <p class="mt-4">
+            Operating in a context marked by accelerating infrastructures and
+            thinning attention, the group treats listening as a political and
+            material act. Sound becomes a way to register pressure—ecological,
+            technical, economic—without resolving it into narrative or solution.
+            What remains is texture: layered, unstable, and resistant to
+            clarity.
+        </p>
+        <p class="mt-4">
+            Spectral Textures should be read less as a platform and more as a
+            trace. An ongoing attempt to stay attuned to what passes through,
+            resonates briefly, and moves on.
+        </p>
+    </section>
 </Layout>

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
 import wavesImg from "../images/waves.webp";
 ---
 
@@ -37,7 +38,7 @@ import wavesImg from "../images/waves.webp";
 			this sense, synthesis does not simulate the real—it interrogates it,
 			frequency by frequency.
 		</p>
-		<p class="mt-6">
+		<p class="mt-4">
 			What emerges is neither field recording nor synthesis in their
 			conventional forms, but a hybrid practice of spectral writing. Urban
 			hums blur into harmonic clouds; insects become unstable oscillators;
@@ -46,7 +47,7 @@ import wavesImg from "../images/waves.webp";
 			document a place so much as destabilize it, replacing geography with
 			topology, site with spectrum.
 		</p>
-		<p class="mt-6">
+		<p class="mt-4">
 			Spectral Textures operates as a platform rather than a genre. It is
 			concerned with listening as a critical act, with sound as an index
 			of systems—ecological, technical, economic—that exceed human scale.
@@ -56,5 +57,13 @@ import wavesImg from "../images/waves.webp";
 			representation, but as a field of forces continuously under
 			construction.
 		</p>
+		<div class="mt-8">
+			<a
+				href="/works"
+				class="inline-flex items-center justify-center min-w-3xs gap-2 whitespace-nowrap px-4 py-2 text-lg font-semibold uppercase text-neutral-900 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:brightness-95 active:brightness-90 bg-lime-400"
+			>
+				Explore
+			</a>
+		</div>
 	</section>
 </Layout>
